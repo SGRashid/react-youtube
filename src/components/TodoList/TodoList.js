@@ -5,10 +5,10 @@ const styles = {
     ul: { listStyle: 'none' }
 };
 
-const TodoList = () => {
+const TodoList = (props) => {
     return (
         <ul style={styles.ul}>
-            <TodoItem />
+            { props.todos.map(todo => <TodoItem todo={todo} />) }
         </ul>
     );
 };
