@@ -14,6 +14,7 @@ const TodoList = (props) => {
                                 key={ todo.id }
                                 index={ index }
                                 onChange={ props.onChange }
+                                onDelete={ props.onDelete }
                             />;
                 })  
             }
