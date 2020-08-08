@@ -8,7 +8,11 @@ const styles = {
 const TodoList = (props) => {
     return (
         <ul style={styles.ul}>
-            { props.todos.map(todo => <TodoItem todo={todo} />) }
+            {
+                props.todos.map((todo, index) => {
+                    return <TodoItem todo={ todo } key={ todo.id } index={ index } />;
+                })
+            }
         </ul>
     );
 };
