@@ -1,0 +1,13 @@
+.delete {
+    padding: 0 !important;
+    width: 31px;
+}
+
+.delete span {
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+li {
+    width: 300px;
+}
