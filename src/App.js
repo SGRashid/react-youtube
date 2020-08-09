@@ -24,8 +24,17 @@ function App() {
     setTodos(todos.filter(t => t.id !== id));
   };
 
+  const createTodo = message => {
+    console.log('new todo : ', message);
+    setTodos(todos.concat({
+      id: (new Date()).getTime(),
+      complited: false,
+      text: message
+    }));
+  };
+
   return (
-    <Context.Provider value={{ deleteTodo, toggleTodo }}>
+    <Context.Provider value={{ deleteTodo, toggleTodo, createTodo }}>
       <div className="wrapper">
         <h1>Список дел</h1>
         { todos.length ? <TodoList todos={todos} /> : <p>Нет задач</p> }
