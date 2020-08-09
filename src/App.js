@@ -27,7 +27,7 @@ function App() {
     <Context.Provider value={{ deleteTodo, toggleTodo }}>
       <div className="wrapper">
         <h1>Список дел</h1>
-        <TodoList todos={todos} />
+        { todos.length ? <TodoList todos={todos} /> : <p>Нет задач</p> }
       </div>
     </Context.Provider>
   );
