@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoList/TodoList';
+import Context from './context';
 
 function App() {
 
@@ -23,13 +24,12 @@ function App() {
   };
 
   return (
-    <div className="wrapper">
-      <h1>Список дел</h1>
-      <TodoList todos={todos}
-        onChange={toggleTodo}
-        onDelete={deleteTodo}
-      ></TodoList>
-    </div>
+    <Context.Provider value={{ deleteTodo, toggleTodo }}>
+      <div className="wrapper">
+        <h1>Список дел</h1>
+        <TodoList todos={todos} />
+      </div>
+    </Context.Provider>
   );
 }
 
