@@ -2,7 +2,10 @@ import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 
 const styles = {
-    ul: { listStyle: 'none' }
+    ul: {
+        listStyle: 'none',
+        padding: '0'
+    }
 };
 
 const TodoList = (props) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList/TodoList';
 import Context from './context';
+import AddTodo from './components/AddTodo/AddTodo';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <div className="wrapper">
         <h1>Список дел</h1>
         { todos.length ? <TodoList todos={todos} /> : <p>Нет задач</p> }
+        <AddTodo />
       </div>
     </Context.Provider>
   );
