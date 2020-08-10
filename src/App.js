@@ -27,7 +27,7 @@ function App() {
   const createTodo = message => {
     console.log('new todo : ', message);
     setTodos(todos.concat({
-      id: (new Date()).getTime(),
+      id: Date.now(),
       complited: false,
       text: message
     }));

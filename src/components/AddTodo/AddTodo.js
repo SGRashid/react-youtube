@@ -6,10 +6,12 @@ const AddTodo = () => {
 
     const [value, setValue] = useState('');
     const {createTodo} = useContext(Context);
+
     const submitHandler = event => {
         event.preventDefault();
         if (value.trim()) {
             createTodo(value);
+            setValue('');
         }
     };
     
