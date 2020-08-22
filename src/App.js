@@ -2,21 +2,19 @@ import React from 'react';
 import TodoList from './components/TodoList/TodoList';
 import Context from './context';
 import AddTodo from './components/AddTodo/AddTodo';
+import Loader from './components/Loader/Loader';
 
 function App() {
 
-  const [todos, setTodos] = React.useState([
-    {id: 1, complited: false, text: 'купить хлеб'},
-    {id: 2, complited: false, text: 'купить пиво'},
-    {id: 3, complited: false, text: 'купить сухарики'},
-  ]);
+  const [todos, setTodos] = React.useState([]);
 
   React.useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
       .then(response => response.json())
       .then(json => {
-        console.log(json);
-        setTodos( json.map(t => ({text: t.title, ...t})) );
+        const data = json.map(t => ({text: t.title, ...t}));
+        console.log(data);
+        setTimeout(() => setTodos(data), 2000);
       });
   }, []);
 
@@ -46,7 +44,7 @@ function App() {
     <Context.Provider value={{ deleteTodo, toggleTodo, createTodo }}>
       <div className="wrapper">
         <h1>Список дел</h1>
-        { todos.length ? <TodoList todos={todos} /> : <p>Нет задач</p> }
+        { todos.length ? <TodoList todos={todos} /> : <Loader /> }
         <AddTodo />
       </div>
     </Context.Provider>
