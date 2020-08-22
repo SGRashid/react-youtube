@@ -1,0 +1,57 @@
+:root {
+    --size: 100px;
+}
+
+.loader-container {
+    margin: 50px 0;
+}
+
+.loader-title {
+    margin-bottom: 100px;
+}
+
+.box-big {
+    width: var(--size);
+    height: var(--size);
+}
+
+.box-red {
+    background-color: red;
+}
+
+.box-small {
+    width: 50%;
+    height: 50%;
+}
+
+.box-yellow {
+    background-color: yellow;
+}
+
+.rotate-clockwise {
+    animation: 3s linear 0s normal none infinite running rotate-clockwise;
+}
+
+.rotate-conterclockwise {
+    animation: 1s linear 0s normal none infinite running rotate-conterclockwise;
+}
+
+@keyframes rotate-clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-conterclockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
