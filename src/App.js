@@ -11,6 +11,15 @@ function App() {
     {id: 3, complited: false, text: 'купить сухарики'},
   ]);
 
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        setTodos( json.map(t => ({text: t.title, ...t})) );
+      });
+  }, []);
+
   const toggleTodo = id => {
     console.log('todo id : ', id);
     setTodos(todos.map(t => {
