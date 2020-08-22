@@ -43,9 +43,11 @@ function App() {
   return (
     <Context.Provider value={{ deleteTodo, toggleTodo, createTodo }}>
       <div className="wrapper">
-        <h1>Список дел</h1>
-        { todos.length ? <TodoList todos={todos} /> : <Loader /> }
-        <AddTodo />
+        { todos.length ? <>
+          <h1>Список дел</h1>
+          <TodoList todos={todos} />
+          <AddTodo />
+        </> : <Loader /> }
       </div>
     </Context.Provider>
   );
