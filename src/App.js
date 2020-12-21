@@ -1,8 +1,8 @@
 import React from 'react';
 import TodoList from './components/TodoList/TodoList';
 import Context from './context';
-// import AddTodo from './components/AddTodo/AddTodo';
 import Loader from './components/Loader/Loader';
+import Modal from "./components/Modal/Modal";
 const AddTodo = React.lazy(() => import('./components/AddTodo/AddTodo'));
 
 function App() {
@@ -46,6 +46,7 @@ function App() {
       <div className="wrapper">
         { todos.length ? <>
           <h1>Список дел</h1>
+          <Modal />
           <TodoList todos={todos} />
           <React.Suspense fallback={<></>}>
             <AddTodo />

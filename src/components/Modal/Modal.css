@@ -1,4 +1,4 @@
-.modal {
+.my-modal {
     position: fixed;
     top: 0;
     right: 0;
@@ -10,10 +10,28 @@
     padding-top: 5rem;
 }
 
-.modal-body {
-    padding: 5rem;
+.my-modal__body {
+    /*padding: 5rem;*/
+    display: flex;
+    flex-direction: column;
     width: 400px;
-    height: 200px;
+    height: 300px;
     border-radius: 10px;
     background: white;
+}
+
+.my-modal__header {
+    display: flex;
+    flex-direction: row;
+}
+
+.my-modal__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-red {
+    color: red !important;
 }
